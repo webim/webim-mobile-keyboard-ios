@@ -1,0 +1,15 @@
+use_frameworks!
+
+platform :ios, '11.0'
+
+target 'WebimKeyboard_Example' do
+  pod 'WebimKeyboard', :path => '../'
+  
+  target 'WebimKeyboard_UNIT_Tests' do
+    inherit! :search_paths
+  end
+  
+  target 'WebimKeyboard_UI_Tests' do
+    inherit! :complete
+  end
+end

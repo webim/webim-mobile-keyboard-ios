@@ -1,0 +1,923 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07E9A4A99E871B82F3F81ECC /* Pods_WebimKeyboard_Example_WebimKeyboard_UI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958ED82CE56AD022FFC12B04 /* Pods_WebimKeyboard_Example_WebimKeyboard_UI_Tests.framework */; };
+		3C62694F11C65662D09FD951 /* Pods_WebimKeyboard_UNIT_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D154B2F72387DAB1C5E9C3D /* Pods_WebimKeyboard_UNIT_Tests.framework */; };
+		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
+		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		6EECA90E164C1735FBE07F94 /* Pods_WebimKeyboard_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58450BA72D0CC341A6652AF7 /* Pods_WebimKeyboard_Example.framework */; };
+		CC0B7A9E2A209C4D001805E6 /* WMKeyboardNotificationsObserverTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B7A9D2A209C4D001805E6 /* WMKeyboardNotificationsObserverTest.swift */; };
+		CC0B7AA02A20A5A5001805E6 /* WMKeyboardNotificationsObserverMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B7A9F2A20A5A5001805E6 /* WMKeyboardNotificationsObserverMock.swift */; };
+		CC0B7AA22A20A90C001805E6 /* WMKeyboardNotificationsObserverContainerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0B7AA12A20A90C001805E6 /* WMKeyboardNotificationsObserverContainerTest.swift */; };
+		CC67788C2A24A082004E416B /* WMChatViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC67787A2A249EA0004E416B /* WMChatViewControllerTests.swift */; };
+		CC71FE672A27566400D0E554 /* XCUI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71FE662A27566400D0E554 /* XCUI+Extension.swift */; };
+		CC71FE682A27566400D0E554 /* XCUI+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71FE662A27566400D0E554 /* XCUI+Extension.swift */; };
+		CC71FE6B2A27666F00D0E554 /* NumericConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71FE6A2A27666F00D0E554 /* NumericConstants.swift */; };
+		CC71FE6C2A27666F00D0E554 /* NumericConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71FE6A2A27666F00D0E554 /* NumericConstants.swift */; };
+		CC71FE6D2A27667C00D0E554 /* NumericConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC71FE6A2A27666F00D0E554 /* NumericConstants.swift */; };
+		CCAF37912A26101000360077 /* WMNewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAF37902A26101000360077 /* WMNewMessageView.swift */; };
+		CCAF37932A26107700360077 /* WMNewMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCAF37922A26107700360077 /* WMNewMessageView.xib */; };
+		CCB3BBE52A1DE8FD00327907 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3BBE42A1DE8FD00327907 /* ChatViewController.swift */; };
+		CCB3BBEC2A1DF80300327907 /* WMKeyboardObservableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3BBEB2A1DF80300327907 /* WMKeyboardObservableMock.swift */; };
+		CCB3BBEE2A1DF8D500327907 /* WMKeyboardObservableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3BBED2A1DF8D500327907 /* WMKeyboardObservableTest.swift */; };
+		CCB3BC062A1E249700327907 /* WMKeyboardRepresentableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3BC052A1E249700327907 /* WMKeyboardRepresentableMock.swift */; };
+		CCB3BC082A1E25D300327907 /* WMKeyboardRepresentableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3BC072A1E25D300327907 /* WMKeyboardRepresentableTest.swift */; };
+		CCC7BA062A5E9C0500DB36D6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC7BA052A5E9C0500DB36D6 /* StartViewController.swift */; };
+		CCDDD46D2A29DD9500B79473 /* WMKeyboardLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD46C2A29DD9500B79473 /* WMKeyboardLoggerTests.swift */; };
+		CCDDD46F2A29E01900B79473 /* WMLoggerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDDD46E2A29E01900B79473 /* WMLoggerMock.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = WebimKeyboard;
+		};
+		CC6778872A24A059004E416B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = WebimKeyboard_Example;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AE1068817AA88EA19A1DC96 /* Pods-WebimKeyboard_UNIT_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimKeyboard_UNIT_Tests.release.xcconfig"; path = "Target Support Files/Pods-WebimKeyboard_UNIT_Tests/Pods-WebimKeyboard_UNIT_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		15E8AEA9822DC541ABB56574 /* WebimKeyboard.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WebimKeyboard.podspec; path = ../WebimKeyboard.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1A409BFE18D39168026CBA09 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1D154B2F72387DAB1C5E9C3D /* Pods_WebimKeyboard_UNIT_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebimKeyboard_UNIT_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2999BC0800E067F9419FFDFC /* Pods-WebimKeyboard_UI_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimKeyboard_UI_Tests.release.xcconfig"; path = "Target Support Files/Pods-WebimKeyboard_UI_Tests/Pods-WebimKeyboard_UI_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		2C82775026F6847F20C05E8B /* Pods-WebimKeyboard_UI_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimKeyboard_UI_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WebimKeyboard_UI_Tests/Pods-WebimKeyboard_UI_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		42DCDB75880E9C04FD578F24 /* Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		53D00D12FF4D3FBBF0F602D4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		57B4EF44FE7E1772AC977C2A /* Pods-WebimKeyboard_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimKeyboard_Example.debug.xcconfig"; path = "Target Support Files/Pods-WebimKeyboard_Example/Pods-WebimKeyboard_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		58450BA72D0CC341A6652AF7 /* Pods_WebimKeyboard_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebimKeyboard_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* WebimKeyboard_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebimKeyboard_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		607FACE51AFB9204008FA782 /* WebimKeyboard_UNIT_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebimKeyboard_UNIT_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86CB66A9F8D67201E438C6D0 /* Pods-WebimKeyboard_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimKeyboard_Example.release.xcconfig"; path = "Target Support Files/Pods-WebimKeyboard_Example/Pods-WebimKeyboard_Example.release.xcconfig"; sourceTree = "<group>"; };
+		881302BA7AFA04225996A123 /* Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.release.xcconfig"; path = "Target Support Files/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		958ED82CE56AD022FFC12B04 /* Pods_WebimKeyboard_Example_WebimKeyboard_UI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebimKeyboard_Example_WebimKeyboard_UI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFDCA18C72B4B0131B32E5F0 /* Pods-WebimKeyboard_UNIT_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebimKeyboard_UNIT_Tests.debug.xcconfig"; path = "Target Support Files/Pods-WebimKeyboard_UNIT_Tests/Pods-WebimKeyboard_UNIT_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC0B7A9D2A209C4D001805E6 /* WMKeyboardNotificationsObserverTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMKeyboardNotificationsObserverTest.swift; sourceTree = "<group>"; };
+		CC0B7A9F2A20A5A5001805E6 /* WMKeyboardNotificationsObserverMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMKeyboardNotificationsObserverMock.swift; sourceTree = "<group>"; };
+		CC0B7AA12A20A90C001805E6 /* WMKeyboardNotificationsObserverContainerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMKeyboardNotificationsObserverContainerTest.swift; sourceTree = "<group>"; };
+		CC67787A2A249EA0004E416B /* WMChatViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WMChatViewControllerTests.swift; path = "Tests/UI Tests/WMChatViewControllerTests.swift"; sourceTree = SOURCE_ROOT; };
+		CC6778812A24A059004E416B /* WebimKeyboard_UI_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebimKeyboard_UI_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC71FE662A27566400D0E554 /* XCUI+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUI+Extension.swift"; sourceTree = "<group>"; };
+		CC71FE6A2A27666F00D0E554 /* NumericConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericConstants.swift; sourceTree = "<group>"; };
+		CCAF37902A26101000360077 /* WMNewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMNewMessageView.swift; sourceTree = "<group>"; };
+		CCAF37922A26107700360077 /* WMNewMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WMNewMessageView.xib; sourceTree = "<group>"; };
+		CCB3BBE42A1DE8FD00327907 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		CCB3BBEB2A1DF80300327907 /* WMKeyboardObservableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMKeyboardObservableMock.swift; sourceTree = "<group>"; };
+		CCB3BBED2A1DF8D500327907 /* WMKeyboardObservableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMKeyboardObservableTest.swift; sourceTree = "<group>"; };
+		CCB3BC052A1E249700327907 /* WMKeyboardRepresentableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMKeyboardRepresentableMock.swift; sourceTree = "<group>"; };
+		CCB3BC072A1E25D300327907 /* WMKeyboardRepresentableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMKeyboardRepresentableTest.swift; sourceTree = "<group>"; };
+		CCC7BA052A5E9C0500DB36D6 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		CCDDD46C2A29DD9500B79473 /* WMKeyboardLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMKeyboardLoggerTests.swift; sourceTree = "<group>"; };
+		CCDDD46E2A29E01900B79473 /* WMLoggerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMLoggerMock.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		607FACCD1AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EECA90E164C1735FBE07F94 /* Pods_WebimKeyboard_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE21AFB9204008FA782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C62694F11C65662D09FD951 /* Pods_WebimKeyboard_UNIT_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC67787E2A24A059004E416B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07E9A4A99E871B82F3F81ECC /* Pods_WebimKeyboard_Example_WebimKeyboard_UI_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28905D0A036C328020321347 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57B4EF44FE7E1772AC977C2A /* Pods-WebimKeyboard_Example.debug.xcconfig */,
+				86CB66A9F8D67201E438C6D0 /* Pods-WebimKeyboard_Example.release.xcconfig */,
+				2C82775026F6847F20C05E8B /* Pods-WebimKeyboard_UI_Tests.debug.xcconfig */,
+				2999BC0800E067F9419FFDFC /* Pods-WebimKeyboard_UI_Tests.release.xcconfig */,
+				BFDCA18C72B4B0131B32E5F0 /* Pods-WebimKeyboard_UNIT_Tests.debug.xcconfig */,
+				0AE1068817AA88EA19A1DC96 /* Pods-WebimKeyboard_UNIT_Tests.release.xcconfig */,
+				42DCDB75880E9C04FD578F24 /* Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.debug.xcconfig */,
+				881302BA7AFA04225996A123 /* Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		30C74A1D679CA849046C4D3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58450BA72D0CC341A6652AF7 /* Pods_WebimKeyboard_Example.framework */,
+				1D154B2F72387DAB1C5E9C3D /* Pods_WebimKeyboard_UNIT_Tests.framework */,
+				958ED82CE56AD022FFC12B04 /* Pods_WebimKeyboard_Example_WebimKeyboard_UI_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		607FACC71AFB9204008FA782 = {
+			isa = PBXGroup;
+			children = (
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD21AFB9204008FA782 /* Example for WebimKeyboard */,
+				607FACE81AFB9204008FA782 /* Tests */,
+				607FACD11AFB9204008FA782 /* Products */,
+				28905D0A036C328020321347 /* Pods */,
+				30C74A1D679CA849046C4D3F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		607FACD11AFB9204008FA782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD01AFB9204008FA782 /* WebimKeyboard_Example.app */,
+				607FACE51AFB9204008FA782 /* WebimKeyboard_UNIT_Tests.xctest */,
+				CC6778812A24A059004E416B /* WebimKeyboard_UI_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		607FACD21AFB9204008FA782 /* Example for WebimKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CC71FE692A27665F00D0E554 /* Constants */,
+				CCAF378F2A26100600360077 /* Views */,
+				CCB3BBE92A1DEA8200327907 /* Resources */,
+				CCB3BBEA2A1DEAC600327907 /* ViewControllers */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
+			);
+			name = "Example for WebimKeyboard";
+			path = WebimKeyboard;
+			sourceTree = "<group>";
+		};
+		607FACD31AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD41AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACE81AFB9204008FA782 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CC71FE652A27564700D0E554 /* Extensions */,
+				CCB3BBF22A1DF8F500327907 /* Mocks */,
+				CC0B7AA32A20B36F001805E6 /* UI Tests */,
+				CCB3BBF12A1DF8F000327907 /* UNIT Tests */,
+				607FACE91AFB9204008FA782 /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		607FACE91AFB9204008FA782 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				607FACEA1AFB9204008FA782 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				15E8AEA9822DC541ABB56574 /* WebimKeyboard.podspec */,
+				1A409BFE18D39168026CBA09 /* README.md */,
+				53D00D12FF4D3FBBF0F602D4 /* LICENSE */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		CC0B7AA32A20B36F001805E6 /* UI Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CC67787A2A249EA0004E416B /* WMChatViewControllerTests.swift */,
+			);
+			path = "UI Tests";
+			sourceTree = "<group>";
+		};
+		CC71FE652A27564700D0E554 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC71FE662A27566400D0E554 /* XCUI+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CC71FE692A27665F00D0E554 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CC71FE6A2A27666F00D0E554 /* NumericConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		CCAF378F2A26100600360077 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCAF37902A26101000360077 /* WMNewMessageView.swift */,
+				CCAF37922A26107700360077 /* WMNewMessageView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCB3BBE92A1DEA8200327907 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCB3BBEA2A1DEAC600327907 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCB3BBE42A1DE8FD00327907 /* ChatViewController.swift */,
+				CCC7BA052A5E9C0500DB36D6 /* StartViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CCB3BBF12A1DF8F000327907 /* UNIT Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CCB3BBED2A1DF8D500327907 /* WMKeyboardObservableTest.swift */,
+				CCB3BC072A1E25D300327907 /* WMKeyboardRepresentableTest.swift */,
+				CC0B7A9D2A209C4D001805E6 /* WMKeyboardNotificationsObserverTest.swift */,
+				CC0B7AA12A20A90C001805E6 /* WMKeyboardNotificationsObserverContainerTest.swift */,
+				CCDDD46C2A29DD9500B79473 /* WMKeyboardLoggerTests.swift */,
+			);
+			path = "UNIT Tests";
+			sourceTree = "<group>";
+		};
+		CCB3BBF22A1DF8F500327907 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CCB3BBEB2A1DF80300327907 /* WMKeyboardObservableMock.swift */,
+				CCB3BC052A1E249700327907 /* WMKeyboardRepresentableMock.swift */,
+				CC0B7A9F2A20A5A5001805E6 /* WMKeyboardNotificationsObserverMock.swift */,
+				CCDDD46E2A29E01900B79473 /* WMLoggerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		607FACCF1AFB9204008FA782 /* WebimKeyboard_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WebimKeyboard_Example" */;
+			buildPhases = (
+				B969C1C44080EDB9A53B2309 /* [CP] Check Pods Manifest.lock */,
+				607FACCC1AFB9204008FA782 /* Sources */,
+				607FACCD1AFB9204008FA782 /* Frameworks */,
+				607FACCE1AFB9204008FA782 /* Resources */,
+				D7A24E8FC391F297066A62F8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebimKeyboard_Example;
+			productName = WebimKeyboard;
+			productReference = 607FACD01AFB9204008FA782 /* WebimKeyboard_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		607FACE41AFB9204008FA782 /* WebimKeyboard_UNIT_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WebimKeyboard_UNIT_Tests" */;
+			buildPhases = (
+				BB545522358DAA5D57C536E2 /* [CP] Check Pods Manifest.lock */,
+				607FACE11AFB9204008FA782 /* Sources */,
+				607FACE21AFB9204008FA782 /* Frameworks */,
+				607FACE31AFB9204008FA782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
+			);
+			name = WebimKeyboard_UNIT_Tests;
+			productName = Tests;
+			productReference = 607FACE51AFB9204008FA782 /* WebimKeyboard_UNIT_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CC6778802A24A059004E416B /* WebimKeyboard_UI_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC6778892A24A059004E416B /* Build configuration list for PBXNativeTarget "WebimKeyboard_UI_Tests" */;
+			buildPhases = (
+				1B859C95B18E284BDA4F440F /* [CP] Check Pods Manifest.lock */,
+				CC67787D2A24A059004E416B /* Sources */,
+				CC67787E2A24A059004E416B /* Frameworks */,
+				CC67787F2A24A059004E416B /* Resources */,
+				EED6678DBABEACB9E2F07F5C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC6778882A24A059004E416B /* PBXTargetDependency */,
+			);
+			name = WebimKeyboard_UI_Tests;
+			productName = WebimKeyboard_UI_Tests;
+			productReference = CC6778812A24A059004E416B /* WebimKeyboard_UI_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		607FACC81AFB9204008FA782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WM;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Webim.ru;
+				TargetAttributes = {
+					607FACCF1AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0900;
+					};
+					607FACE41AFB9204008FA782 = {
+						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0900;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+					CC6778802A24A059004E416B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
+				};
+			};
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "WebimKeyboard" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+				Base,
+			);
+			mainGroup = 607FACC71AFB9204008FA782;
+			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				607FACCF1AFB9204008FA782 /* WebimKeyboard_Example */,
+				607FACE41AFB9204008FA782 /* WebimKeyboard_UNIT_Tests */,
+				CC6778802A24A059004E416B /* WebimKeyboard_UI_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		607FACCE1AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCAF37932A26107700360077 /* WMNewMessageView.xib in Resources */,
+				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE31AFB9204008FA782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC67787F2A24A059004E416B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B859C95B18E284BDA4F440F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B969C1C44080EDB9A53B2309 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebimKeyboard_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB545522358DAA5D57C536E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebimKeyboard_UNIT_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7A24E8FC391F297066A62F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebimKeyboard_Example/Pods-WebimKeyboard_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebimKeyboard_Example/Pods-WebimKeyboard_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebimKeyboard_Example/Pods-WebimKeyboard_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EED6678DBABEACB9E2F07F5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests/Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		607FACCC1AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCC7BA062A5E9C0500DB36D6 /* StartViewController.swift in Sources */,
+				CCB3BBE52A1DE8FD00327907 /* ChatViewController.swift in Sources */,
+				CC71FE6D2A27667C00D0E554 /* NumericConstants.swift in Sources */,
+				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				CCAF37912A26101000360077 /* WMNewMessageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		607FACE11AFB9204008FA782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCB3BBEC2A1DF80300327907 /* WMKeyboardObservableMock.swift in Sources */,
+				CCB3BBEE2A1DF8D500327907 /* WMKeyboardObservableTest.swift in Sources */,
+				CCDDD46F2A29E01900B79473 /* WMLoggerMock.swift in Sources */,
+				CC0B7A9E2A209C4D001805E6 /* WMKeyboardNotificationsObserverTest.swift in Sources */,
+				CC0B7AA22A20A90C001805E6 /* WMKeyboardNotificationsObserverContainerTest.swift in Sources */,
+				CC0B7AA02A20A5A5001805E6 /* WMKeyboardNotificationsObserverMock.swift in Sources */,
+				CC71FE672A27566400D0E554 /* XCUI+Extension.swift in Sources */,
+				CCB3BC062A1E249700327907 /* WMKeyboardRepresentableMock.swift in Sources */,
+				CCB3BC082A1E25D300327907 /* WMKeyboardRepresentableTest.swift in Sources */,
+				CCDDD46D2A29DD9500B79473 /* WMKeyboardLoggerTests.swift in Sources */,
+				CC71FE6B2A27666F00D0E554 /* NumericConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC67787D2A24A059004E416B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC67788C2A24A082004E416B /* WMChatViewControllerTests.swift in Sources */,
+				CC71FE682A27566400D0E554 /* XCUI+Extension.swift in Sources */,
+				CC71FE6C2A27666F00D0E554 /* NumericConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* WebimKeyboard_Example */;
+			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
+		};
+		CC6778882A24A059004E416B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* WebimKeyboard_Example */;
+			targetProxy = CC6778872A24A059004E416B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				607FACDF1AFB9204008FA782 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		607FACED1AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		607FACEE1AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		607FACF01AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57B4EF44FE7E1772AC977C2A /* Pods-WebimKeyboard_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 574GE9X9L7;
+				INFOPLIST_FILE = WebimKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.WebimKeyboard.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		607FACF11AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86CB66A9F8D67201E438C6D0 /* Pods-WebimKeyboard_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 574GE9X9L7;
+				INFOPLIST_FILE = WebimKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.WebimKeyboard.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		607FACF31AFB9204008FA782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFDCA18C72B4B0131B32E5F0 /* Pods-WebimKeyboard_UNIT_Tests.debug.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 574GE9X9L7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.WebimKeyboard.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebimKeyboard_Example.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WebimKeyboard_Example";
+			};
+			name = Debug;
+		};
+		607FACF41AFB9204008FA782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AE1068817AA88EA19A1DC96 /* Pods-WebimKeyboard_UNIT_Tests.release.xcconfig */;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 574GE9X9L7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.WebimKeyboard.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebimKeyboard_Example.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WebimKeyboard_Example";
+			};
+			name = Release;
+		};
+		CC67788A2A24A059004E416B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42DCDB75880E9C04FD578F24 /* Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 574GE9X9L7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Webim.WebimKeyboard-UI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WebimKeyboard_Example;
+			};
+			name = Debug;
+		};
+		CC67788B2A24A059004E416B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 881302BA7AFA04225996A123 /* Pods-WebimKeyboard_Example-WebimKeyboard_UI_Tests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 574GE9X9L7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Webim.WebimKeyboard-UI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WebimKeyboard_Example;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "WebimKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACED1AFB9204008FA782 /* Debug */,
+				607FACEE1AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WebimKeyboard_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF01AFB9204008FA782 /* Debug */,
+				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "WebimKeyboard_UNIT_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607FACF31AFB9204008FA782 /* Debug */,
+				607FACF41AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC6778892A24A059004E416B /* Build configuration list for PBXNativeTarget "WebimKeyboard_UI_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC67788A2A24A059004E416B /* Debug */,
+				CC67788B2A24A059004E416B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
+}
