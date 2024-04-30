@@ -78,7 +78,8 @@ public class WMKeyboardManager: WMKeyboardManagerProtocol {
      - Parameter keyboardInfo: The keyboard information containing details about the keyboard, such as its frame and animation duration.
      */
     private func setContentInset(keyboardInfo: Notification.KeyboardInfo) {
-        UIView.animate(withDuration: keyboardInfo.animationDuration!) { [weak self] in
+        let animationDuration = (keyboardInfo.animationDuration == .zero ? 0.3 : keyboardInfo.animationDuration) ?? 0.3
+        UIView.animate(withDuration: animationDuration) { [weak self] in
             guard let self = self else { return }
             let contentInset = keyboardInfo.frameEnd?.height ?? 0
             WMKeyboardLogger.shared.log("Start setting contentInset for associated scrollView. ContentInset - \(contentInset)", level: .info)
@@ -93,7 +94,8 @@ public class WMKeyboardManager: WMKeyboardManagerProtocol {
      - Parameter keyboardInfo: The keyboard information containing details about the keyboard, such as its frame and animation duration.
      */
     private func setContentOffset(keyboardInfo: Notification.KeyboardInfo, scrollViewModel: WMScrollViewModel, delta: CGFloat) {
-        UIView.animate(withDuration: keyboardInfo.animationDuration!) { [weak self] in
+        let animationDuration = (keyboardInfo.animationDuration == .zero ? 0.3 : keyboardInfo.animationDuration) ?? 0.3
+        UIView.animate(withDuration: animationDuration) { [weak self] in
             guard let self = self else { return }
             let contentOffset = (scrollViewModel.scrollViewContentOffset) + delta
             WMKeyboardLogger.shared.log("Start setting contentOffset for associated scrollView. ContentOffset - \(contentOffset)", level: .info)
@@ -123,8 +125,9 @@ public class WMKeyboardManager: WMKeyboardManagerProtocol {
         let keyboardHeightEqualToolbarHeight = keyboardHeight.isEqual(to: scrollViewModel.toolbarViewHeight, epsilon: 0.1)
         let isRestrictedAnimationDuration = keyboardInfo.animationDuration == .zero ||  keyboardInfo.animationDuration == 0.35
         let isNotificationAfterSwitchApp = keyboardInfo.frameBegin == keyboardInfo.frameEnd
+        let isNotificationFromSpecialDeviceModel = UIDevice.modelName == "iPhone 7"
         let finishedNotification = (kind == .keyboardDidShow) || (kind == .keyboardDidHide)
-        return (keyboardHeightEqualToolbarHeight && isRestrictedAnimationDuration) || (isNotificationAfterSwitchApp && isRestrictedAnimationDuration) || finishedNotification
+        return (keyboardHeightEqualToolbarHeight && isRestrictedAnimationDuration) || (isNotificationAfterSwitchApp && isRestrictedAnimationDuration && !isNotificationFromSpecialDeviceModel) || finishedNotification
     }
     
     /**

@@ -13,6 +13,8 @@ let package = Package(
     targets: [
         .target(
             name: "WebimKeyboard",
-            path: "WebimKeyboard")
+            path: "WebimKeyboard",
+            resources: [.copy("PrivacyInfo.xcprivacy")]
+        )
     ]
 )

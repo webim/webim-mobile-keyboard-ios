@@ -75,7 +75,9 @@ public class WMKeyboardLogger: WMLoggerProtocol {
         
         let currentDate = dateFormatter.string(from: Date())
         let logLevel = level.rawValue
-        print("\(bundleIdentifier) || \(currentDate) || \(logLevel) || \(message)")
+        let logMessage = "\(bundleIdentifier) || \(currentDate) || \(logLevel) || \(message)"
+        WMKeyboardLogManager.shared.logContainer.append(logMessage)
+        print(logMessage)
     }
     
     private func canLog(level: LogLevel) -> Bool {
