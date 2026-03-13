@@ -43,6 +43,12 @@ public protocol WMKeyboardRepresentable: AnyObject {
 
     /// This method is called after the keyboard disappears from the device screen
     func keyboardDidHide(keyboardInfo: Notification.KeyboardInfo)
+    
+    /// This method is called after the keyboard appears on the device screen
+    func keyboardDidChangeFrame(keyboardInfo: Notification.KeyboardInfo)
+
+    /// This method is called after the keyboard disappears from the device screen
+    func keyboardWillChangeFrame(keyboardInfo: Notification.KeyboardInfo)
 
 }
 
@@ -62,6 +68,14 @@ public extension WMKeyboardRepresentable where Self: WMKeyboardObservable {
 
     func keyboardDidHide(notification: Notification) {
         keyboardDidHide(keyboardInfo: notification.keyboardInfo)
+    }
+    
+    func keyboardDidChangeFrame(notification: Notification) {
+        keyboardDidChangeFrame(keyboardInfo: notification.keyboardInfo)
+    }
+
+    func keyboardWillChangeFrame(notification: Notification) {
+        keyboardWillChangeFrame(keyboardInfo: notification.keyboardInfo)
     }
 }
 

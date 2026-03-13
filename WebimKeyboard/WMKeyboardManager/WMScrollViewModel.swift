@@ -26,14 +26,22 @@
 
 import Foundation
 
-public struct WMScrollViewModel {
+public class WMScrollViewModel {
     var toolbarViewHeight: CGFloat
     var scrollViewContentOffset: CGFloat
     var scrollViewContentInset: CGFloat
+    var safeAreaBottom: CGFloat
+    var lastKeyboardHeight: CGFloat
     
-    public init(toolbarViewHeight: CGFloat, scrollViewContentOffset: CGFloat, scrollViewContentInset: CGFloat) {
+    public init(toolbarViewHeight: CGFloat,
+                scrollViewContentOffset: CGFloat,
+                scrollViewContentInset: CGFloat,
+                safeAreaBottom: CGFloat,
+                lastKeyboardHeight: CGFloat) {
         self.toolbarViewHeight = toolbarViewHeight
         self.scrollViewContentOffset = scrollViewContentOffset
         self.scrollViewContentInset = scrollViewContentInset
+        self.safeAreaBottom = safeAreaBottom
+        self.lastKeyboardHeight = lastKeyboardHeight
     }
 }

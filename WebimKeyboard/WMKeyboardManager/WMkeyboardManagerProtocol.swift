@@ -48,5 +48,6 @@ public protocol WMKeyboardManagerProtocol {
             - keyboardInfo: The keyboard information containing details about the keyboard, such as its frame and animation duration.
             - kind: The kind of keyboard notification, such as keyboard will show, keyboard did show, keyboard will hide, or keyboard did hide.
      */
-    func adjustKeyboardNotification(_ keyboardInfo: Notification.KeyboardInfo, kind: Notification.Kind)
+    func adjustKeyboardNotification(_ keyboardInfo: Notification.KeyboardInfo,
+                                    kind: Notification.Kind)
 }

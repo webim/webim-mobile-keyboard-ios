@@ -78,4 +78,6 @@ public protocol WMKeyboardManagerDelegate: AnyObject {
         to this value.
      */
     func layoutIfNeeded()
+    
+    func set(keyboardHeight: CGFloat)
 }

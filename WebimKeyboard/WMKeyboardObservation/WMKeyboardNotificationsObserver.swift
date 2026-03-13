@@ -120,4 +120,31 @@ class WMKeyboardNotificationsObserver {
         WMKeyboardLogger.shared.log("Received notification: \(notification)", level: .info)
         view?.keyboardDidHide(notification: notification)
     }
+    
+    /**
+        Handles the `keyboardDidHide` event.
+     
+        This method is called when the keyboard has been hidden.
+     
+        - Parameter notification: The notification object containing information about the keyboard.
+    */
+    @objc
+    func keyboardWillChangeFrame(notification: Notification) {
+        WMKeyboardLogger.shared.log("Received notification: \(notification)", level: .info)
+        view?.keyboardWillChangeFrame(notification: notification)
+    }
+    
+    
+    /**
+        Handles the `keyboardDidHide` event.
+     
+        This method is called when the keyboard has been hidden.
+     
+        - Parameter notification: The notification object containing information about the keyboard.
+    */
+    @objc
+    func keyboardDidChangeFrame(notification: Notification) {
+        WMKeyboardLogger.shared.log("Received notification: \(notification)", level: .info)
+        view?.keyboardDidChangeFrame(notification: notification)
+    }
 }

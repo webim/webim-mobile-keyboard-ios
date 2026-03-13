@@ -90,6 +90,28 @@ public protocol WMKeyboardObservable: AnyObject {
         - Parameter notification: The notification object containing information about the keyboard.
     */
     func keyboardDidHide(notification: Notification)
+    
+    /**
+        Handles the keyboard did hide event.
+     
+        This method is called when the keyboard has been hidden.
+     
+        This method has empty default implementation.
+     
+        - Parameter notification: The notification object containing information about the keyboard.
+    */
+    func keyboardDidChangeFrame(notification: Notification)
+    
+    /**
+        Handles the keyboard did hide event.
+     
+        This method is called when the keyboard has been hidden.
+     
+        This method has empty default implementation.
+     
+        - Parameter notification: The notification object containing information about the keyboard.
+    */
+    func keyboardWillChangeFrame(notification: Notification)
 }
 
 public extension WMKeyboardObservable {
@@ -121,6 +143,16 @@ public extension WMKeyboardObservable {
         center.addObserver(notificationsObserver,
                            selector: #selector(WMKeyboardNotificationsObserver.keyboardDidHide(notification:)),
                            name: UIResponder.keyboardDidHideNotification,
+                           object: nil)
+        WMKeyboardLogger.shared.log("Adding observer for keyboardDidChangeFrame notification", level: .debug)
+        center.addObserver(notificationsObserver,
+                           selector: #selector(WMKeyboardNotificationsObserver.keyboardDidChangeFrame(notification:)),
+                           name: UIResponder.keyboardDidChangeFrameNotification,
+                           object: nil)
+        WMKeyboardLogger.shared.log("Adding observer for keyboardWillChangeFrame notification", level: .debug)
+        center.addObserver(notificationsObserver,
+                           selector: #selector(WMKeyboardNotificationsObserver.keyboardWillChangeFrame(notification:)),
+                           name: UIResponder.keyboardWillChangeFrameNotification,
                            object: nil)
     }
 

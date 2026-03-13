@@ -37,8 +37,20 @@ public class WMKeyboardManager: WMKeyboardManagerProtocol {
     
     public init() { }
     
-    public func adjustKeyboardNotification(_ keyboardInfo: Notification.KeyboardInfo, kind: Notification.Kind) {
+    public func adjustKeyboardNotification(_ keyboardInfo: Notification.KeyboardInfo,
+                                           kind: Notification.Kind) {
+        
         WMKeyboardLogger.shared.log("WMKeyboardManager start handle \(kind) notification with keyboardInfo: \(keyboardInfo)", level: .debug)
+        
+        guard kind != .keyboardDidChangeFrame && kind != .keyboardWillChangeFrame && keyboardInfo.frameEnd?.height != 0 && !(kind == .keyboardWillShow && keyboardInfo.frameEnd == keyboardInfo.frameBegin) else {
+            if #available(iOS 26, *) {
+                let keyboardHeight = (keyboardInfo.frameBegin?.origin.y ?? 0) - (keyboardInfo.frameEnd?.origin.y ?? 0)
+                if keyboardHeight > 0 {
+                    delegate?.set(keyboardHeight: keyboardHeight)
+                    }
+                }
+            return
+        }
         
         guard let scrollViewModel = delegate?.scrollViewModel else {
             WMKeyboardLogger.shared.log("WMKeyboardManager.delegate doesn't exist. You must to set this property!", level: .error)
@@ -52,24 +64,44 @@ public class WMKeyboardManager: WMKeyboardManagerProtocol {
             return
         }
         
-        let keyboardInfo = handleKeyboardWillHideNotification(
+        let keyboardInfoForInset = handleKeyboardWillHideNotification(
             keybordInfo: keyboardInfo,
             toolbarHeight: scrollViewModel.toolbarViewHeight,
             kind: kind
         )
+    
+        let windowSafeAreaBottom = scrollViewModel.safeAreaBottom
+        var delta = (keyboardInfo.frameBegin?.origin.y ?? 0) - (keyboardInfo.frameEnd?.origin.y ?? 0)
+        if #available(iOS 26, *) {
+            if kind == .keyboardWillShow || kind == .keyboardDidShow {
+                if delta > 0 {
+                    delegate?.set(keyboardHeight: delta)
+                }
+            }
+                    
+            if kind == .keyboardWillHide || kind == .keyboardDidHide {
+                delta -= scrollViewModel.lastKeyboardHeight
+            }
+        }
         
-        setContentInset(keyboardInfo: keyboardInfo)
-        
-        let delta = (keyboardInfo.frameEnd?.height ?? 0) - (keyboardInfo.frameBegin?.height ?? 0)
+        delta += delta > 0 ? -windowSafeAreaBottom : windowSafeAreaBottom
         WMKeyboardLogger.shared.log("Delta counted - \(delta)", level: .verbose)
-
+        
         // This skip prevent extra scroll.
-        if isExtraNotification(keyboardInfo: keyboardInfo, scrollViewModel: scrollViewModel, kind: kind) {
+        if isExtraNotification(keyboardInfo: keyboardInfo,
+                               scrollViewModel: scrollViewModel,
+                               kind: kind) {
             WMKeyboardLogger.shared.log("Extra notification detected in \(#function). Notification - \(keyboardInfo)", level: .info)
             return
         }
         
-        setContentOffset(keyboardInfo: keyboardInfo, scrollViewModel: scrollViewModel, delta: delta)
+        setContentInset(keyboardInfo: keyboardInfoForInset,
+                        scrollViewModel: scrollViewModel,
+                        kind: kind)
+        
+        setContentOffset(keyboardInfo: keyboardInfo,
+                         scrollViewModel: scrollViewModel,
+                         delta: delta)
     }
     
     /**
@@ -77,11 +109,16 @@ public class WMKeyboardManager: WMKeyboardManagerProtocol {
      
      - Parameter keyboardInfo: The keyboard information containing details about the keyboard, such as its frame and animation duration.
      */
-    private func setContentInset(keyboardInfo: Notification.KeyboardInfo) {
+    private func setContentInset(keyboardInfo: Notification.KeyboardInfo,
+                                 scrollViewModel: WMScrollViewModel,
+                                 kind: Notification.Kind) {
         let animationDuration = (keyboardInfo.animationDuration == .zero ? 0.3 : keyboardInfo.animationDuration) ?? 0.3
         UIView.animate(withDuration: animationDuration) { [weak self] in
             guard let self = self else { return }
-            let contentInset = keyboardInfo.frameEnd?.height ?? 0
+            var contentInset = (keyboardInfo.frameEnd?.height ?? 0) - scrollViewModel.safeAreaBottom
+            if kind == .keyboardWillShow {
+                contentInset -= scrollViewModel.safeAreaBottom
+            }
             WMKeyboardLogger.shared.log("Start setting contentInset for associated scrollView. ContentInset - \(contentInset)", level: .info)
             self.delegate?.set(contentInset: contentInset)
             self.delegate?.layoutIfNeeded()
@@ -93,7 +130,9 @@ public class WMKeyboardManager: WMKeyboardManagerProtocol {
      
      - Parameter keyboardInfo: The keyboard information containing details about the keyboard, such as its frame and animation duration.
      */
-    private func setContentOffset(keyboardInfo: Notification.KeyboardInfo, scrollViewModel: WMScrollViewModel, delta: CGFloat) {
+    private func setContentOffset(keyboardInfo: Notification.KeyboardInfo,
+                                  scrollViewModel: WMScrollViewModel,
+                                  delta: CGFloat) {
         let animationDuration = (keyboardInfo.animationDuration == .zero ? 0.3 : keyboardInfo.animationDuration) ?? 0.3
         UIView.animate(withDuration: animationDuration) { [weak self] in
             guard let self = self else { return }
@@ -116,17 +155,15 @@ public class WMKeyboardManager: WMKeyboardManagerProtocol {
      
         - seealso: `handleKeyboardWillHideNotification`
      */
-    private func isExtraNotification(
-        keyboardInfo: Notification.KeyboardInfo,
-        scrollViewModel: WMScrollViewModel,
-        kind: Notification.Kind
-    ) -> Bool {
+    private func isExtraNotification(keyboardInfo: Notification.KeyboardInfo,
+                                     scrollViewModel: WMScrollViewModel,
+                                     kind: Notification.Kind) -> Bool {
         guard let keyboardHeight = keyboardInfo.frameEnd?.height else { return true }
         let keyboardHeightEqualToolbarHeight = keyboardHeight.isEqual(to: scrollViewModel.toolbarViewHeight, epsilon: 0.1)
         let isRestrictedAnimationDuration = keyboardInfo.animationDuration == .zero ||  keyboardInfo.animationDuration == 0.35
         let isNotificationAfterSwitchApp = keyboardInfo.frameBegin == keyboardInfo.frameEnd
-        let isNotificationFromSpecialDeviceModel = UIDevice.modelName == "iPhone 7"
-        let finishedNotification = (kind == .keyboardDidShow) || (kind == .keyboardDidHide)
+        let isNotificationFromSpecialDeviceModel = scrollViewModel.safeAreaBottom == 0
+        let finishedNotification = (kind == .keyboardDidShow) || (kind == .keyboardDidHide) || (kind == .keyboardDidChangeFrame)
         return (keyboardHeightEqualToolbarHeight && isRestrictedAnimationDuration) || (isNotificationAfterSwitchApp && isRestrictedAnimationDuration && !isNotificationFromSpecialDeviceModel) || finishedNotification
     }
     
@@ -148,28 +185,24 @@ public class WMKeyboardManager: WMKeyboardManagerProtocol {
         - Parameter kind: The kind of keyboard notification, such as keyboard will show, keyboard did show, keyboard will hide, or keyboard did hide.
         - Returns: The updated keyboard information with the adjusted frame end.
      */
-    private func handleKeyboardWillHideNotification(
-        keybordInfo: Notification.KeyboardInfo,
-        toolbarHeight: CGFloat,
-        kind: Notification.Kind
-    ) -> Notification.KeyboardInfo {
+    private func handleKeyboardWillHideNotification(keybordInfo: Notification.KeyboardInfo,
+                                                    toolbarHeight: CGFloat,
+                                                    kind: Notification.Kind) -> Notification.KeyboardInfo {
         
         guard kind == .keyboardWillHide else { return keybordInfo }
         
-        let frameEnd = CGRect(
-            x: keybordInfo.frameEnd?.origin.x ?? 0,
-            y: keybordInfo.frameEnd?.origin.y ?? 0,
-            width: keybordInfo.frameEnd?.width ?? 0,
-            height: toolbarHeight + (keybordInfo.heightDelta ?? 0)
+        let frameEnd = CGRect(x: keybordInfo.frameEnd?.origin.x ?? 0,
+                              y: keybordInfo.frameEnd?.origin.y ?? 0,
+                              width: keybordInfo.frameEnd?.width ?? 0,
+                              height: toolbarHeight + (keybordInfo.heightDelta ?? 0)
         )
+
         
-        let newKeyboardInfo = Notification.KeyboardInfo(
-            name: keybordInfo.name,
-            frameBegin: keybordInfo.frameEnd,
-            animationCurve: keybordInfo.animationCurve,
-            animationDuration: keybordInfo.animationDuration,
-            frameEnd: frameEnd
-        )
+        let newKeyboardInfo = Notification.KeyboardInfo(name: keybordInfo.name,
+                                                        frameBegin: keybordInfo.frameEnd,
+                                                        animationCurve: keybordInfo.animationCurve,
+                                                        animationDuration: keybordInfo.animationDuration,
+                                                        frameEnd: frameEnd)
         WMKeyboardLogger.shared.log("\(keybordInfo) was replaced to \(newKeyboardInfo) in \(#function)", level: .info)
         return newKeyboardInfo
     }

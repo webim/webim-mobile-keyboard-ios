@@ -48,6 +48,8 @@ public extension Notification {
         case keyboardWillHide
         case keyboardDidShow
         case keyboardDidHide
+        case keyboardWillChangeFrame
+        case keyboardDidChangeFrame
         
         var shown: Bool {
             return self == .keyboardWillShow || self == .keyboardDidShow
@@ -56,13 +58,11 @@ public extension Notification {
 
     // MARK: - Public Properties
     var keyboardInfo: KeyboardInfo {
-        return KeyboardInfo(
-            name: name,
-            frameBegin: keyboardFrameBegin,
-            animationCurve: keyboradAnimationCurve,
-            animationDuration: keyboardAnimationDuration,
-            frameEnd: keyboardFrameEnd
-        )
+        return KeyboardInfo(name: name,
+                            frameBegin: keyboardFrameBegin,
+                            animationCurve: keyboradAnimationCurve,
+                            animationDuration: keyboardAnimationDuration,
+                            frameEnd: keyboardFrameEnd)
     }
 
     // MARK: - Private Properties
